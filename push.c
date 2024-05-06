@@ -8,10 +8,20 @@
 void push(stack_t **stack, unsigned int line_number)
 {
     char *arg = strtok(NULL, " \n");
-    int value;
+    long int value;
     stack_t *new_node = NULL;
+    char *endptr;
 
     if (arg == NULL || (!isdigit(*arg) && *arg != '-' && *arg != '+'))
+    {
+        fprintf(stderr, "L%u: usage: push integer\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+
+   
+    value = strtol(arg, &endptr, 10);
+    /* Check if the entire argument is a valid integer */
+    if (*endptr != '\0')
     {
         fprintf(stderr, "L%u: usage: push integer\n", line_number);
         exit(EXIT_FAILURE);
