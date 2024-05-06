@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
                 push(&stack, line_number);
             else if (strcmp(opcode, "pall") == 0)
                 pall(&stack, line_number);
-            /* Add more opcodes as needed */
+            /* more opcodes go here */
             else
             {
                 fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
@@ -48,6 +48,8 @@ int main(int argc, char *argv[])
                 exit(EXIT_FAILURE);
             }
         }
+		free(line);
+		line = NULL;
     }
 
     free(line);
