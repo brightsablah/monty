@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
     FILE *file;
-    char *line = NULL;
+    char *line = NULL, *opcode = NULL;
     size_t len = 0;
     ssize_t read;
     unsigned int line_number = 0;
@@ -32,10 +32,9 @@ int main(int argc, char *argv[])
     while ((read = getline(&line, &len, file)) != -1)
     {
         line_number++;
-        char *opcode = strtok(line, " \n");
+        opcode = strtok(line, " \n");
         if (opcode != NULL && *opcode != '#')
         {
-            printf("Debug tool: checking for opcode on line %d\n", line_number);
             if (strcmp(opcode, "push") == 0)
                 push(&stack, line_number);
             else if (strcmp(opcode, "pall") == 0)
