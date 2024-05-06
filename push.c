@@ -8,6 +8,8 @@
 void push(stack_t **stack, unsigned int line_number)
 {
     char *arg = strtok(NULL, " \n");
+    int value;
+    stack_t *new_node = NULL;
 
     if (arg == NULL || !isdigit(*arg))
     {
@@ -15,8 +17,8 @@ void push(stack_t **stack, unsigned int line_number)
         exit(EXIT_FAILURE);
     }
 
-    int value = atoi(arg);
-    stack_t *new_node = malloc(sizeof(stack_t));
+    value = atoi(arg);
+    new_node = malloc(sizeof(stack_t));
     if (new_node == NULL)
     {
         fprintf(stderr, "Error: malloc failed\n");
