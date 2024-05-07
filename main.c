@@ -1,5 +1,8 @@
 #include "monty.h"
 
+	int MODE = 0;
+	(void)MODE;
+
 /**
  * main - Entry point for the Monty interpreter
  * @argc: Number of command-line arguments
@@ -16,8 +19,7 @@ int main(int argc, char *argv[])
 	char *opcode = NULL;
     unsigned int line_number = 0;
     stack_t *stack = NULL;
-	int MODE = 0;
-	(void)MODE;
+
 
     if (argc != 2)
     {
