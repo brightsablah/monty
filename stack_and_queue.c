@@ -7,10 +7,11 @@
  */
 void stack_(stack_t **stack, unsigned int line_number)
 {
-	stack_t *prev = NULL;
-    stack_t *next = NULL;
-	(void)line_number;
 	stack_t *current = NULL;
+	stack_t *prev = NULL;
+    	stack_t *next = NULL;
+	(void)line_number;
+
 
     if (mode == 1)  /* check mode */
     {
@@ -39,10 +40,11 @@ void stack_(stack_t **stack, unsigned int line_number)
  */
 void queue_(stack_t **stack, unsigned int line_number)
 {
-	stack_t *prev = NULL;
-    stack_t *next = NULL;
-    (void)line_number;
 	stack_t *current = NULL;
+	stack_t *prev = NULL;
+    	stack_t *next = NULL;
+    	(void)line_number;
+
 
     if (mode == 0)  /* check mode */
     {
