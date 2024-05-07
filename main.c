@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     unsigned int line_number = 0;
     stack_t *stack = NULL;
 	int MODE = 0;
+	(void)MODE;
 
     if (argc != 2)
     {
