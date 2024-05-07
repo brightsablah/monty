@@ -9,9 +9,11 @@
 int main(int argc, char *argv[])
 {
     FILE *file;
-    char *line = NULL, *opcode = NULL;
+ /* char *line = NULL, *opcode = NULL;
     size_t len = 0;
-    ssize_t read;
+    ssize_t read; */
+	char line[1024];
+	char *opcode = NULL;
     unsigned int line_number = 0;
     stack_t *stack = NULL;
 
@@ -29,7 +31,7 @@ int main(int argc, char *argv[])
     }
 
  
-    while ((read = getline(&line, &len, file)) != -1)
+    while (fgets(line, sizeof(line), file) != NULL)
     {
         line_number++;
         opcode = strtok(line, " \n");
@@ -43,16 +45,23 @@ int main(int argc, char *argv[])
             else
             {
                 fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
-                free(line);
+              /*  free(line); */
                 fclose(file);
                 exit(EXIT_FAILURE);
             }
         }
-		free(line);
-		line = NULL;
+	/*	free(line); 
+		line = NULL; */
     }
 
-    free(line);
+    /* Free memory allocated for the stack */
+    while (stack != NULL)
+    {
+        stack_t *temp = stack;
+        stack = stack->next;
+        free(temp);
+    }
+
     fclose(file);
     return (EXIT_SUCCESS);
 }
