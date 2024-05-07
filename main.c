@@ -47,6 +47,8 @@ int main(int argc, char *argv[])
                 pop(&stack, line_number);
 	    else if (strcmp(opcode, "swap") == 0)
                 swap(&stack, line_number);
+	else if (strcmp(opcode, "add") == 0)
+                add(&stack, line_number);
             /* more opcodes go here */
             else
             {
