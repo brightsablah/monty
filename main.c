@@ -34,6 +34,11 @@ int main(int argc, char *argv[])
     while (fgets(line, sizeof(line), file) != NULL)
     {
         line_number++;
+
+	/* skip comment lines # */
+	if (line[0] == '#')
+		continue;
+	    
         opcode = strtok(line, " \n");
         if (opcode != NULL && *opcode != '#')
         {
