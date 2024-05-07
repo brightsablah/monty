@@ -48,7 +48,7 @@ stack_t *last = NULL;
         new_node->next = *stack;
         *stack = new_node;
     }
-    else if (mode == 1) /* Queue mode (FIFO) */
+    else if (MODE == 1) /* Queue mode (FIFO) */
     {
         last = *stack;
         if (last != NULL)
