@@ -1,7 +1,6 @@
 #include "monty.h"
 
 	int MODE = 0;
-	(void)MODE;
 
 /**
  * main - Entry point for the Monty interpreter
