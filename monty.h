@@ -38,6 +38,10 @@ typedef struct instruction_s
   void (*f)(stack_t **stack, unsigned int line_number);
 } instructions_t;
 
+
+/* mode: 0 for stack, 1 for queue */
+int mode = 0;
+
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
 void push(stack_t **stack, unsigned int line_number);
