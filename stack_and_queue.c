@@ -1,26 +1,63 @@
-/* mode: 0 for stack, 1 for queue */
-int mode = 0;
-
 /**
- * stack_op - Sets the format of the data to a stack (LIFO)
+ * stack_ - Sets the format of the data to a stack (LIFO)
  * @stack: Pointer to the top of the stack
  * @line_number: Line number being executed
  */
 void stack_(stack_t **stack, unsigned int line_number)
 {
-    (void)stack;
     (void)line_number;
-    mode = 0;
+	stack_t *current = NULL;
+
+    if (mode == 1)  /* check mode */
+    {
+        /* Reverse the order of elements to switch to stack mode */
+        current = *stack;
+        stack_t *prev = NULL;
+        stack_t *next = NULL;
+
+        while (current != NULL)
+        {
+            next = current->next;
+            current->next = prev;
+            current->prev = next;
+            prev = current;
+            current = next;
+        }
+
+        *stack = prev;  /* Update the top of the stack */
+    }
+
+    mode = 0;  /* Set mode to stack */
 }
 
 /**
- * queue_op - Sets the format of the data to a queue (FIFO)
+ * queue_ - Sets the format of the data to a queue (FIFO)
  * @stack: Pointer to the top of the stack
  * @line_number: Line number being executed
  */
 void queue_(stack_t **stack, unsigned int line_number)
 {
-    (void)stack;
     (void)line_number;
-    mode = 1;
+	stack_t *current = NULL;
+
+    if (mode == 0)  /* check mode */
+    {
+        /* Reverse the order of elements to switch to queue mode */
+        current = *stack;
+        stack_t *prev = NULL;
+        stack_t *next = NULL;
+
+        while (current != NULL)
+        {
+            next = current->prev;
+            current->prev = prev;
+            current->next = next;
+            prev = current;
+            current = next;
+        }
+
+        *stack = prev;  /* Update the top of the stack */
+    }
+
+    mode = 1;  /* Set mode to queue */
 }
