@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 	char *opcode = NULL;
     unsigned int line_number = 0;
     stack_t *stack = NULL;
+	MODE = 0;
 
     if (argc != 2)
     {
