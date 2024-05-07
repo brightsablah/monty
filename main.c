@@ -63,7 +63,9 @@ int main(int argc, char *argv[])
 	else if (strcmp(opcode, "mul") == 0)
                 mul_(&stack, line_number);
 	else if (strcmp(opcode, "mod") == 0)
-                mod_(&stack, line_number);		
+                mod_(&stack, line_number);
+	else if (strcmp(opcode, "pchar") == 0)
+                pchar_(&stack, line_number);		
             /* more opcodes go here */
             else
             {
