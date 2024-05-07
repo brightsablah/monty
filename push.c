@@ -36,14 +36,14 @@ void push(stack_t **stack, unsigned int line_number)
     new_node->n = value;
     new_node->prev = NULL;
 
-    if (mode == 0) /* Stack mode (LIFO) */
+    if (MODE == 0) /* Stack mode (LIFO) */
     {
         if (*stack != NULL)
             (*stack)->prev = new_node;
         new_node->next = *stack;
         *stack = new_node;
     }
-    else if (mode == 1) /* Queue mode (FIFO) */
+    else if (MODE == 1) /* Queue mode (FIFO) */
     {
         stack_t *last = *stack;
         if (last != NULL)
