@@ -28,9 +28,9 @@ stack_t *last = NULL;
         exit(EXIT_FAILURE);
     }
 
-/*
+
     value = atoi(arg);
-    */
+    
     new_node = malloc(sizeof(stack_t));
     if (new_node == NULL)
     {
