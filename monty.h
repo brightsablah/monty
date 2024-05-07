@@ -51,5 +51,6 @@ void sub(stack_t **stack, unsigned int line_number);
 void div_(stack_t **stack, unsigned int line_number);
 void mul_(stack_t **stack, unsigned int line_number);
 void mod_(stack_t **stack, unsigned int line_number);
+void pchar_(stack_t **stack, unsigned int line_number);
 
 #endif
