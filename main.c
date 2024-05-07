@@ -51,6 +51,8 @@ int main(int argc, char *argv[])
                 add(&stack, line_number);
 	else if (strcmp(opcode, "nop") == 0)
                 nop(&stack, line_number);
+	else if (strcmp(opcode, "sub") == 0)
+                sub(&stack, line_number);
             /* more opcodes go here */
             else
             {
