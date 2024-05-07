@@ -42,7 +42,9 @@ int main(int argc, char *argv[])
             else if (strcmp(opcode, "pall") == 0)
                 pall(&stack, line_number);
 	    else if (strcmp(opcode, "pint") == 0)
-                pint(&stack, line_number);
+                pint(&stack, line_number);	  
+	    else if (strcmp(opcode, "pop") == 0)
+                pop(&stack, line_number);
             /* more opcodes go here */
             else
             {
