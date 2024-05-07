@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * mul_op - Multiplies the second top element of the stack by the top element
+ * mul - Multiplies the second top element of the stack by the top element
  * @stack: Pointer to the top of the stack
  * @line_number: Line number being executed
  */
-void mul_op(stack_t **stack, unsigned int line_number)
+void mul(stack_t **stack, unsigned int line_number)
 {
     if (*stack == NULL || (*stack)->next == NULL)
     {
