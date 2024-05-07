@@ -13,7 +13,7 @@ void stack_(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 
 
-    if (mode == 1)  /* check mode */
+    if (MODE == 1)  /* check mode */
     {
         /* Reverse the order of elements to switch to stack mode */
         current = *stack;
@@ -30,7 +30,7 @@ void stack_(stack_t **stack, unsigned int line_number)
         *stack = prev;  /* Update the top of the stack */
     }
 
-    mode = 0;  /* Set mode to stack */
+    MODE = 0;  /* Set mode to stack */
 }
 
 /**
@@ -46,7 +46,7 @@ void queue_(stack_t **stack, unsigned int line_number)
     	(void)line_number;
 
 
-    if (mode == 0)  /* check mode */
+    if (MODE == 0)  /* check mode */
     {
         /* Reverse the order of elements to switch to queue mode */
         current = *stack;
@@ -63,5 +63,5 @@ void queue_(stack_t **stack, unsigned int line_number)
         *stack = prev;  /* Update the top of the stack */
     }
 
-    mode = 1;  /* Set mode to queue */
+    MODE = 1;  /* Set mode to queue */
 }
