@@ -67,7 +67,9 @@ int main(int argc, char *argv[])
 	else if (strcmp(opcode, "pchar") == 0)
                 pchar_(&stack, line_number);
 	else if (strcmp(opcode, "pstr") == 0)
-                pstr_(&stack, line_number);		
+                pstr_(&stack, line_number);
+	else if (strcmp(opcode, "rotl") == 0)
+                rotl_(&stack, line_number);		
             /* more opcodes go here */
             else
             {
