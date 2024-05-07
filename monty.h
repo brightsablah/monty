@@ -53,5 +53,6 @@ void mul_(stack_t **stack, unsigned int line_number);
 void mod_(stack_t **stack, unsigned int line_number);
 void pchar_(stack_t **stack, unsigned int line_number);
 void pstr_(stack_t **stack, unsigned int line_number);
+void rotl_(stack_t **stack, unsigned int line_number);
 
 #endif
