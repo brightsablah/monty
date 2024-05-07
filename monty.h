@@ -40,7 +40,7 @@ typedef struct instruction_s
 
 
 /* mode: 0 for stack, 1 for queue */
-extern int MODE = 0;
+extern int MODE;
 
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
