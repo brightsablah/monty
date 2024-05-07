@@ -10,7 +10,7 @@ void pall(stack_t **stack, unsigned int line_number)
     stack_t *current;
 	(void)line_number;
 
-    if (mode == 0) /* Stack mode (LIFO) */
+    if (MODE == 0) /* Stack mode (LIFO) */
     {
         current = *stack;
         while (current != NULL)
@@ -19,7 +19,7 @@ void pall(stack_t **stack, unsigned int line_number)
             current = current->next;
         }
     }
-    else if (mode == 1) /* Queue mode (FIFO) */
+    else if (MODE == 1) /* Queue mode (FIFO) */
     {
         current = *stack;
         while (current != NULL)
