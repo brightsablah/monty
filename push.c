@@ -66,3 +66,4 @@ stack_t *last = NULL;
     *stack = new_node;
         */
 }
+}
